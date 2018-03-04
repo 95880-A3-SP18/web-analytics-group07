@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="/static/cars/style.css">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Results</h1>
+
+<div class="price">
+    <h2>Estimated price: {{ price }}</h2>
+
+</div>
+
+<div class="diagram">
+    <h2>Data Visualization</h2>
+    <img class="figure1" src='/static/cars/image/plot1.png'>
+    <br>
+    <br>
+
+    <img class="figure2" src='/static/cars/image/plot2.png'>
+    <br>
+    <br>
+
+    <img class="figure3" src='/static/cars/image/plot3.png'>
+    <br>
+    <br>
+
+    <img class="figure4" src='/static/cars/image/plot4.png'>
+    <br>
+    <br>
+
+    <img class="figure5" src='/static/cars/image/plot5.png'>
+
+</div>
+
+<div class="link">
+    <h2><a href={{ url }}>Similar cars on sale</a></h2>
+</div>
+<br>
+<a href="/cars/">Calculate again?</a>
+<p>All the data are from www.truecar.com</p>
+</body>
+</html>

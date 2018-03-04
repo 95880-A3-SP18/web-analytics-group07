@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h1>
+    Carspedia: Search used cars on sale near Pittsburgh
+    <br>
+</h1>
+<br>
+<form action="{% url 'results' %}" method="post">
+    {% csrf_token %}
+    <!--<input type="hidden" name="csrfmiddlewaretoken" value="W3vmxQGpsxPJIi83mhh61mpGD7sUCgTXYIWW9kJbbV0JNDJJt24ymZsHHBY1YXe5">-->
+
+    <fieldset display="inline-block";>
+        Required information <br><br>
+        <label for="mileage">Mileage: </label>
+        <input type="text" name="mileage"  required=""  id="mileage">
+
+        <br>
+        <br>
+
+        <label for="year">Year: </label>
+        <input type="number" required="" name="year" max="2018" min="2001"  id="year">
+
+        <br>
+        <br>
+        <label for="brand">Brand: </label><select name="brand" required="" id="brand">
+        <option value="" selected="">------------------</option>
+
+        <option value="Audi A4">Audi A4</option>
+        <option value="Buick Verano">Buick Verano</option>
+        <option value="Cadillac CTS">Cadillac CTS</option>
+        <option value="Chevrolet Cobalt">Chevrolet Cobalt</option>
+        <option value="Chevrolet Cruze">Chevrolet Cruze</option>
+        <option value="Chevrolet Malibu">Chevrolet Malibu</option>
+        <option value="Chrysler 200">Chrysler 200</option>
+        <option value="Dodge Avenger">Dodge Avenger</option>
+        <option value="Ford Fusion">Ford Fusion</option>
+        <option value="Chrysler 200">Chrysler 200</option>
+        <option value="Honda Civic">Honda Civic</option>
+        <option value="Honda Civic">Honda Civic Hybrid</option>
+        <option value="Honda Civic">Honda Civic Sedan</option>
+        <option value="Hyundai Elantra">Hyundai Elantra</option>
+        <option value="Hyundai Sonata">Hyundai Sonata</option>
+        <option value="Hyundai Sonata Hybrid">Hyundai Sonata Hybrid</option>
+        <option value="Kia Optima">Kia Optima</option>
+        <option value="Kia Forte">Kia Forte</option>
+        <option value="Lexus HS">Lexus HS</option>
+        <option value="Lexus HS 250">Lexus HS 250</option>
+        <option value="Mazda Mazda3">Mazda Mazda3</option>
+        <option value="Mitsubishi Outlander Sport">Mitsubishi Outlander Sport</option>
+        <option value="Nissan Altima">Nissan Altima</option>
+        <option value="Nissan Sentra">Nissan Sentra</option>
+        <option value="Volkswagen Golf GTI">Volkswagen Golf GTI</option>
+        <option value="Volkswagen Jetta">Volkswagen Jetta</option>
+        <option value="Volkswagen Jetta Sedan">Volkswagen Jetta Sedan</option>
+        <option value="Volkswagen Passat">Volkswagen Passat</option>
+
+    </select>
+
+    <br>
+    <br>
+
+        <label for="transmission">Transmission: </label><select name="transmission" id="transmission" required="">
+        <option value="" selected="">--------</option>
+
+        <option value="4-Speed Automatic">4-Speed Automatic</option>
+        <option value="4-speed Automatic w/OD">4-speed Automatic w/OD</option>
+        <option value="4-Speed Automatic with Overdrive">4-Speed Automatic with Overdrive</option>
+        <option value="5-speed Manual w/OD">5-speed Manual w/OD</option>
+        <option value="6-speed Automatic">6-speed Automatic</option>
+        <option value="6-speed Auto-Shift Manual w/OD">6-speed Auto-Shift Manual w/OD</option>
+        <option value="6-speed Automatic w/Manual Shift">6-speed Automatic w/Manual Shift</option>
+        <option value="6-speed Automatic w/OD">6-speed Automatic w/OD</option>
+        <option value="6-speed Manual">6-speed Manual</option>
+        <option value="6-speed Manual w/OD">6-speed Manual w/OD</option>
+        <option value="6-Speed Shiftable Automatic w/Overdrive">6-Speed Shiftable Automatic w/Overdrive</option>
+        <option value="Automatic - 4 Speed">Automatic - 4 Speed</option>
+        <option value="Automatic - 6 Speed">Automatic - 6 Speed</option>
+        <option value="Automatic - 6 Speed Shiftable">Automatic - 6 Speed Shiftable</option>
+        <option value="A/T">A/T</option>
+        <option value="CVT">CVT</option>
+        <option value="CVT w/OD">CVT w/OD</option>
+        <option value="CVT with Sportronic">CVT with Sportronic</option>
+        <option value="Manual - 6 Speed">Manual - 6 Speed</option>
+
+    </select>
+        <br>
+        <br>
+
+        <label for="mpg">Miles per gallon </label><select name="mpg" id="mpg" required="">
+        <option value="" selected="">-----------</option>
+
+        <option value="16 cty / 23 hwy">16 cty / 23 hwy</option>
+        <option value="17 cty / 23 hwy">17 cty / 23 hwy</option>
+        <option value="17 cty / 26 hwy">17 cty / 26 hwy</option>
+        <option value="18 cty / 26 hwy">18 cty / 26 hwy</option>
+        <option value="20 cty / 31 hwy">20 cty / 31 hwy</option>
+        <option value="21 cty / 29 hwy">21 cty / 29 hwy</option>
+        <option value="21 cty / 30 hwy">21 cty / 30 hwy</option>
+        <option value="21 cty / 32 hwy">21 cty / 32 hwy</option>
+        <option value="22 cty / 30 hwy">22 cty / 30 hwy</option>
+        <option value="22 cty / 31 hwy">22 cty / 31 hwy</option>
+        <option value="22 cty / 33 hwy">22 cty / 33 hwy</option>
+        <option value="22 cty / 34 hwy">22 cty / 34 hwy</option>
+        <option value="22 cty / 35 hwy">22 cty / 35 hwy</option>
+        <option value="23 cty / 29 hwy">23 cty / 29 hwy</option>
+        <option value="23 cty / 34 hwy">23 cty / 34 hwy</option>
+        <option value="24 cty / 30 hwy">24 cty / 30 hwy</option>
+        <option value="24 cty / 34 hwy">24 cty / 34 hwy</option>
+        <option value="24 cty / 35 hwy">24 cty / 35 hwy</option>
+        <option value="24 cty / 36 hwy">24 cty / 36 hwy</option>
+        <option value="25 cty / 36 hwy">25 cty / 36 hwy</option>
+        <option value="25 cty / 37 hwy">25 cty / 37 hwy</option>
+        <option value="25 cty / 38 hwy">25 cty / 38 hwy</option>
+        <option value="26 cty / 39 hwy">26 cty / 39 hwy</option>
+        <option value="26 cty / 38 hwy">26 cty / 38 hwy</option>
+        <option value="44 cty / 47 hwy">44 cty / 47 hwy</option>
+        <option value="29 cty / 38 hwy">29 cty / 38 hwy</option>
+        <option value="28 cty / 38 hwy">28 cty / 38 hwy</option>
+        <option value="27 cty / 36 hwy">27 cty / 36 hwy</option>
+        <option value="27 cty / 37 hwy">27 cty / 37 hwy</option>
+        <option value="27 cty / 38 hwy">27 cty / 38 hwy</option>
+        <option value="30 cty / 40 hwy">30 cty / 40 hwy</option>
+        <option value="30 cty / 41 hwy">30 cty / 41 hwy</option>
+        <option value="36 cty / 40 hwy">36 cty / 40 hwy</option>
+        <option value="39 cty / 45 hwy">39 cty / 45 hwy</option>
+        <option value="40 cty / 44 hwy">39 cty / 45 hwy</option>
+        <option value="44 cty / 47 hwy">44 cty / 47 hwy</option>
+
+    </select>
+    </fieldset>
+
+    <br>
+    <p>All the data are from www.truecar.com</p>
+    <input type="submit" value="Show result">
+</form>
+</body>
+</html>
